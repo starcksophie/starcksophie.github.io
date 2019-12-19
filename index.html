@@ -1,1 +1,17 @@
-Hello World
+---
+layout: default
+robots: noindex
+---
+
+<div class="main-post-list">
+
+  {% capture my-include %}{% include cv.md %}{% endcapture %}
+  {{ my-include | markdownify }}
+
+  <hr class="post-list__divider ">
+
+  {% if paginator.previous_page or paginator.next_page %}
+      {% include pagination.html %}
+  {% endif %}
+
+</div>
